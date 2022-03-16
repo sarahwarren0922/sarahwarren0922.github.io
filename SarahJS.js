@@ -9,7 +9,6 @@ fetch('https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx
         headers: {
             'PB-Customer-Id': 'sa42ddf',
             'Content-type': 'application/json',
-            'Cache-control': 'no-cache',
             //'Access-Control-Allow-Origin': 'file:///C:/Users/sa023wa/OneDrive%20-%20Precisely%20Inc/Learning/EO%20Communicate%20Video%20APIs/index.html'
         },
         //mode: 'no-cors'
