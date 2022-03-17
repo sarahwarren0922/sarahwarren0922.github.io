@@ -9,10 +9,18 @@
 </head>
 
 <body>
-    <script src="./SarahJS.js"></script>
+
     <h1>EngageOne Communicate Video API Demo</h1>
     <p>Here is a description of this page.</p>
-    <button type="button">Click Me!</button>
+    <button onclick="getToken()">Generate Authorization Token</button>
+    <p id="demo"></p>
+
+    <script>
+        function getToken() {
+            document.getElementById("demo").innerHTML = "Token generated successfully!";
+        }
+        </script>
+
 </body>
 
 </html>
