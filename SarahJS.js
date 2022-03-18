@@ -9,12 +9,10 @@ const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc2MjA2MDkuODEy
 fetch('https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl', {
         method: 'GET',
         headers: {
-            'Authorization': 'Bearer' + '${token}',
+            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc2MjE4MDYuMDQ4Nzg2LCJpYXQiOjE2NDc2MTgyMDYuMDQ4Nzg2LCJuYmYiOjE2NDc2MTgyMDYuMDQ4Nzg2LCJpc3MiOiJwcm9kdWN0aW9uLS11cy1lYXN0LTEiLCJzdWIiOiJmODFjOTYxYi1kNmJkLTRjNmQtOGU3YS1mNTJmMTVhMjZjYjYiLCJwcm9maWxlIjp7ImlkIjoiZjgxYzk2MWItZDZiZC00YzZkLThlN2EtZjUyZjE1YTI2Y2I2IiwibmFtZSI6IlNhcmFoIiwiZW1haWwiOiJzYTQyZGRmLjRkdGF2ZzFkd3Ewc2FrcnhAY29tbXVuaWNhdGUuZW5nYWdlb25lLmNvIiwic3ViX2lkIjoic2E0MmRkZiIsInN1YnNjcmlwdGlvbl9pZCI6InNhNDJkZGYiLCJzdWJzY3JpcHRpb25faWRzIjpbInNhNDJkZGYiXSwicm9sZXMiOlsiYWRtaW4iXSwiY2NfaWRfdG9rZW4iOiJleUpyYVdRaU9pSkpNMFpXU1hkMFlsUktiVWhpZGxoa2RUUmZaVEJzY0UxSmJrTTBTVmx0WDI5eFlsbHpjVFJoWldkM0lpd2lZV3huSWpvaVVsTXlOVFlpZlEuZXlKemRXSWlPaUl3TUhVMlpURmtOakJ4Wm1OUGEzSk1kelI0TnlJc0luWmxjaUk2TVN3aWFYTnpJam9pYUhSMGNITTZMeTl6YzI4dWNISmxZMmx6Wld4NUxtTnZiUzl2WVhWMGFESXZZWFZ6WW5KeE5EVmtlblZ5Wm14T05FczBlRFlpTENKaGRXUWlPaUl3YjJGaE1teHFhM016UTI1c1RWUmlhREYwTnlJc0ltbGhkQ0k2TVRZME56WXhPREl3TkN3aVpYaHdJam94TmpRM05qSXhPREEwTENKcWRHa2lPaUpKUkM0MlJrdFRTV1l0Y0d0NU1USmpUM0Z2UTFRMVV6bHRRbVJuUm1OQlpUQjJZV3hZWDJObVVqbEROR2xSSWl3aVlXMXlJanBiSW5CM1pDSmRMQ0pwWkhBaU9pSXdNRzlpYlRCNWFEVlVWMVZ2ZFZKT1NqUjROaUlzSW1GMWRHaGZkR2x0WlNJNk1UWTBOell4T0RJd05Dd2lZWFJmYUdGemFDSTZJbE15TlZOSFRYUkpVVFJ4YVdJdFpXZzVjRmRrZEdjaWZRLnBZN3pvRzZqX3FfNmd0a2dXUmRFT3RScWJVYUd1eHhBSUhvOEhsa1ZoeXFaWTkzVTNXbDRIRUttaVl6Mk9XdGctSDRjSkh3QnJ5Q2ZRb1NHTmh1RlZDNW0tRElLQ3JHbDY1a1NwTVdaTFk3bjhQWXJRYmhjbHpMbDBzcGpHM2lyWm5vdTZnai1pUEVYSk90M2lYVTVCYjhkeDBGWkxRWDJSdTNzNnpEUUtsbUQ0VFd2R3VkcGFVc3czZzdNVm90bVhFb1RnLU5scXc5UkhSc1k0eWd2QmEwSkJRWUxwMUU3MFNYdVdHMWFTX2FYWC1CNGxQdkJMMW5Fb1YxQ1F1X3BLSXlTZWRMNHhDQXZPWXRBT1F4MG4xUjF1dG9rQXNxMUxmMWlZeV9ibFVubDhtQVZLVmhOWWFYajd5VEswMTB6alVGYUplYTdhZXFxZzRqQk1ZalFmdyIsImFjY291bnRfaWQiOiJlMS1wcmUtc2FsZXMiLCJhY2NvdW50X3N1YnNjcmlwdGlvbl9pZCI6bnVsbH19.jh0Oi5kyq7fKW48Sl_sFlzLA9CZmrBiJBIPp7YzAEiI',
             'PB-Customer-Id': 'sa42ddf',
-            'Content-type': 'application/json',
-            //'Access-Control-Allow-Origin': 'file:///C:/Users/sa023wa/OneDrive%20-%20Precisely%20Inc/Learning/EO%20Communicate%20Video%20APIs/index.html'
-        },
-        //mode: 'no-cors'
+            'Content-type': 'application/json'
+        }
     })
    .then(res => {
        return res.json()
