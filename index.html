@@ -11,15 +11,45 @@
 <body>
 
     <h1>EngageOne Communicate Video API Demo</h1>
-    <p>Here is a description of this page.</p>
-    <button onclick="getToken()">Generate Authorization Token</button>
-    <p id="demo"></p>
+    <h3>Here is a description of this page.</h3>
+    <p><b>Step 1</b> - Click the "Generate Token" button to generate an authorization token to be used in the next steps.</p>
+    <button onclick="getToken()">Generate Token</button>
+    <p id="generatetoken"></p>
+
+    <p><b>Step 2</b> - Click the "Generate URL" button to generate the generic video URL.</p>
+    <button onclick="getGenericURL()">Generate URL</button>
+    <p id="generategeneric"></p>
+    
 
     <script>
         function getToken() {
-            document.getElementById("demo").innerHTML = "Token generated successfully!";
+            document.getElementById("generatetoken").innerHTML = "Token generated successfully!";
         }
-        </script>
+
+        function getGenericURL() {
+            document.getElementById("generategeneric").innerHTML = "URL generated successfully!";
+        }
+
+/*        const data = {
+            client_id: "sa42ddf.4DtaVG1dWQ0sakRx@communicate.engageone.co",
+            secret: "dB0NfHR32Sc28U48",
+            customer_id: "sa42ddf"
+        };
+        fetch('https://usersapi.communicate.engageone.co/authenticate', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'PB-Customer-Id': 'sa42ddf',
+            'Content-type': 'application/json'   
+        },
+    })
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+    });
+*/
+
+    </script>
 
 </body>
 
