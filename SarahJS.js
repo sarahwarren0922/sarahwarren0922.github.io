@@ -9,7 +9,7 @@ const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDc2MjA2MDkuODEy
 fetch('https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl', {
         method: 'GET',
         headers: {
-            'Authorization': 'token ${token}',
+            'Authorization': 'Bearer' + '${token}',
             'PB-Customer-Id': 'sa42ddf',
             'Content-type': 'application/json',
             //'Access-Control-Allow-Origin': 'file:///C:/Users/sa023wa/OneDrive%20-%20Precisely%20Inc/Learning/EO%20Communicate%20Video%20APIs/index.html'
