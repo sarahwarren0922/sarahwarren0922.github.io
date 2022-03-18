@@ -26,7 +26,8 @@ function login() {
             token = data.token;
             logResponse("loginResponse", 'Global variable set with token value:' + token )
         })
-        .catch(console.error)
+        .catch(console.error);
+        console.log(token)
 }
 
 function makeRequest() {
