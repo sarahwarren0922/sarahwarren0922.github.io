@@ -15,19 +15,21 @@ function login() {
             'Content-type': 'application/json; charset=UTF-8'
         }
     })
-        .then((res) => {
-            if(res.status == 200) {
-                return res.json()
+        .then((response) => {
+            if(Response.status == 200) {
+                return response.json()
             } else {
-                throw Error(res.statusText)
+                throw Error(Response.statusText)
             }
         })
         .then(data => {
             token = data.token;
             //logResponse("loginResponse", 'Global variable set with token value:' + token );
-            alert(token)
+            console.log(token)
         })
-        .catch(console.error)
+        .catch(error => {
+            console.error('There was a problem:', error);
+        });
 }
 
 function makeRequest() {
@@ -47,7 +49,8 @@ function makeRequest() {
             }
         }).then(responseText => logResponse("requestResponse", responseText))
         .catch(console.error)
-}
+        }
+
 
 //This section does something to get a token and save it in the browser session securely (I SHOULD USE THIS BUT IM TOO DUMB TO UNDERSTAND IT)
 /*function authModule() {
