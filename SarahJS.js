@@ -30,24 +30,9 @@ function login() {
         .then(data => {
             token = data;
             //localStorage.setItem("token", token);
-            logResponse("loginResponse", 'Global variable set with token value:' + token)
+            logResponse("loginResponse", 'Token generated successfully!')
         })
         .catch(error => console.error(error))
-      
-    /* .then((res) => {
-            if(res.status == 200) {
-                return res.json()
-            } else {
-                throw Error(res.statusText)
-            }
-        })
-        .then(data => {
-            //token = data.token;
-            localStorage.setItem("token", data.token)
-            logResponse("loginResponse", 'localStorage set with token value:' + token );
-            //console.log(token)
-        })
-        .catch(console.error) */
 }
 
 function makeRequest() {
@@ -58,12 +43,12 @@ function makeRequest() {
             'PB-Customer-Id': 'sa42ddf',
             'Content-type': 'application/json'}
     }
-    fetch("https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: headers})
-        .then((res) => {
-            if (res.status == 200) {
-                return res.text()
+    fetch("https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: headers})
+        .then((response) => {
+            if (response.status == 200) {
+                return response.text()
             } else {
-                throw Error(res.statusText)
+                throw Error(response.statusText)
             }
         }).then(responseText => logResponse("requestResponse", responseText))
         .catch(console.error)
