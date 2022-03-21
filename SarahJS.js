@@ -5,7 +5,7 @@ const tokenBody = {
 };
 
 
-var token;
+//var token;
 
 function login() {
     fetch("https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate", {
@@ -17,7 +17,7 @@ function login() {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            localStorage.setItem("token", data.token)
         })
         .catch(error => console.error(error))
       
