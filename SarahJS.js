@@ -15,7 +15,13 @@ function login() {
             'Content-type': 'application/json; charset=UTF-8'
         }
     })
-        .then((res) => {
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => console.error(error))
+      
+    /* .then((res) => {
             if(res.status == 200) {
                 return res.json()
             } else {
@@ -26,9 +32,9 @@ function login() {
             //token = data.token;
             localStorage.setItem("token", data.token)
             logResponse("loginResponse", 'localStorage set with token value:' + token );
-            console.log(token)
+            //console.log(token)
         })
-        .catch(console.error)
+        .catch(console.error) */
 }
 
 function makeRequest() {
