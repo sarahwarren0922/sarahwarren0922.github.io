@@ -8,7 +8,7 @@ const tokenBody = {
 var token;
 
 function login() {
-    fetch("https://usersapi.communicate.engageone.co/authenticate", {
+    fetch("https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate", {
         method: 'POST',
         body: JSON.stringify(tokenBody),
         headers: {
@@ -26,8 +26,7 @@ function login() {
             token = data.token;
             logResponse("loginResponse", 'Global variable set with token value:' + token )
         })
-        .catch(console.error);
-        console.log(token)
+        .catch(console.error)
 }
 
 function makeRequest() {
