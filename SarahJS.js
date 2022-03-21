@@ -26,7 +26,7 @@ function login() {
         .then(data => {
             token = data;
             localStorage.setItem("token", token);
-            logResponse("loginResponse", 'Global variable set with token value:' + token)
+            console.log("loginResponse", 'Global variable set with token value:' + token)
         })
         .catch(error => console.error(error))
       
