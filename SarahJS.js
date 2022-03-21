@@ -4,6 +4,10 @@ const tokenBody = {
         customer_id: "sa42ddf"
 };
 
+//defining a helper function that will log out responses
+function logResponse(codeblock, text) {
+    document.getElementById(codeblock).innerText = text;
+}
 
 var token; //global variable
 
@@ -25,8 +29,8 @@ function login() {
 
         .then(data => {
             token = data;
-            localStorage.setItem("token", token);
-            console.log("loginResponse", 'Global variable set with token value:' + token)
+            //localStorage.setItem("token", token);
+            logResponse("loginResponse", 'Global variable set with token value:' + token)
         })
         .catch(error => console.error(error))
       
