@@ -15,21 +15,20 @@ function login() {
             'Content-type': 'application/json; charset=UTF-8'
         }
     })
-        .then((response) => {
-            if(Response.status == 200) {
-                return response.json()
+        .then((res) => {
+            if(res.status == 200) {
+                return res.json()
             } else {
-                throw Error(Response.statusText)
+                throw Error(res.statusText)
             }
         })
         .then(data => {
-            token = data.token;
-            //logResponse("loginResponse", 'Global variable set with token value:' + token );
+            //token = data.token;
+            localStorage.setItem("token", data.token)
+            logResponse("loginResponse", 'localStorage set with token value:' + token );
             console.log(token)
         })
-        .catch(error => {
-            console.error('There was a problem:', error);
-        });
+        .catch(console.error)
 }
 
 function makeRequest() {
