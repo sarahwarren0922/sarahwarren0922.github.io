@@ -17,7 +17,8 @@ function login() {
     })
         .then(response => response.json())
         .then(data => {
-            localStorage.setItem("token", data.token)
+            token = data;
+            localStorage.setItem("token", token)
         })
         .catch(error => console.error(error))
       
