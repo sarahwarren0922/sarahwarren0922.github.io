@@ -24,7 +24,8 @@ function login() {
         })
         .then(data => {
             token = data.token;
-            console.log("loginResponse", 'Global variable set with token value:' + token )
+            logResponse("loginResponse", 'Global variable set with token value:' + token );
+            alert(token)
         })
         .catch(console.error)
 }
