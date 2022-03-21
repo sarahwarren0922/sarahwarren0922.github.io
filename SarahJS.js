@@ -5,7 +5,7 @@ const tokenBody = {
 };
 
 
-//var token;
+var token; //global variable
 
 function login() {
     fetch("https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate", {
@@ -25,7 +25,8 @@ function login() {
 
         .then(data => {
             token = data;
-            localStorage.setItem("token", token)
+            localStorage.setItem("token", token);
+            logResponse("loginResponse", 'Global variable set with token value:' + token)
         })
         .catch(error => console.error(error))
       
