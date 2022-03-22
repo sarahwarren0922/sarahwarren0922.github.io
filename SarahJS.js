@@ -135,14 +135,20 @@ function recordIdRequest() {
         })
         .catch(console.error)
 }
-console.log(uuidArray);
+
 //Step 5 button function
 function appendIds() {
     purlsArray = [];
     for (let i = 0; i <uuidArray.length; i++) {
         var purls = genericUrl + uuidArray[i];
         purlsArray.push(purls);
-        logResponse("appendIdFinal", purlsArray.join('\n'))
+        //logResponse("appendIdFinal", purlsArray.join('\n'))
+    }
+    purlsArraywName = [];
+    for (let i = 0; i < purlsArray.length; i++) {
+        var wname = gotoResponse[i].NAME + " - " + purlsArray[i];
+        purlsArraywName.push(wname);
+        logResponse("appendIdFinal", purlsArraywName.join('\n'))
     }
 }
 
