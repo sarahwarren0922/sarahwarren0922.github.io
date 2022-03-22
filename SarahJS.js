@@ -126,10 +126,10 @@ function recordIdRequest() {
             parsedResponse = JSON.stringify(responseText.data);
             //logResponse("recordIdResponse", parsedResponse);
             //logResponse("dataIdResponse", "Data Source Id: " + dataSourceId + " obtained successfully!")
-            keyResponse = JSON.parse(parsedResponse)
+            gotoResponse = JSON.parse(parsedResponse)
             uuidArray = [];
-            for(let i = 0; i < keyResponse.length; i++) {
-                var uuids = keyResponse[i].uuid;
+            for(let i = 0; i < gotoResponse.length; i++) {
+                var uuids = gotoResponse[i].uuid;
                 uuidArray.push(uuids);
             logResponse("recordIdResponse", uuidArray)
 }
