@@ -136,6 +136,16 @@ function recordIdRequest() {
         .catch(console.error)
 }
 
+//Seperate function notes to make urls clickable (hyperlinked)
+var a = document.createElement('a');
+var linkText = document.createTextNode("my title text");
+a.appendChild(linkText);
+a.title = "my title text";
+a.href = "http://www.google.com";
+document.body.appendChild(a);
+logResponse('appendIdFinal', document.body.appendChild(a));
+
+
 //Step 5 button function
 function appendIds() {
     purlsArray = [];
@@ -148,7 +158,7 @@ function appendIds() {
     for (let i = 0; i < purlsArray.length; i++) {
         var wname = gotoResponse[i].NAME + " - " + purlsArray[i];
         purlsArraywName.push(wname);
-        logResponse("appendIdFinal", purlsArraywName.join('\n'))
+        //logResponse("appendIdFinal", purlsArraywName.join('\n'))
     }
 }
 
