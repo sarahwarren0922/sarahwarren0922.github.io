@@ -33,6 +33,7 @@ function authModule() {
 //var token; //global variable
 const auth = new authModule();
 
+//Step 1 button function
 function login() {
     fetch("https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate", {
         method: 'POST',
@@ -57,6 +58,7 @@ function login() {
         .catch(error => console.error(error))
 }
 
+//Step 2 button  function
 const nonauthHeaders = {
     'PB-Customer-Id': 'sa42ddf',
     'Content-type': 'application/json'
@@ -83,6 +85,23 @@ function makeRequest() {
             parsedResponse = JSON.stringify(responseText.videoUrl);
             logResponse("requestResponse", JSON.parse(parsedResponse))
             genericUrl = JSON.parse(parsedResponse)
+        })
+        .catch(console.error)
+}
+
+//Step 3 button function
+function dataIdRequest() {
+    auth.fetch("https://limitless-sea-04039.herokuapp.com/https://api.us-east-1.communicate.engageone.co/data", {headers: nonauthHeaders})
+        .then((response) => {
+            if (response.status == 200) {
+                return response.json()
+            } else {
+                throw Error(response.statusText)
+            }
+        })
+        .then((responseText) => {
+            //parsedResponse = JSON.stringify(responseText.videoUrl);
+            logResponse("dataIdResponse", responseText)
         })
         .catch(console.error)
 }
