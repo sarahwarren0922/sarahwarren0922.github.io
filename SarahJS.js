@@ -39,7 +39,7 @@ function makeRequest() {
     let headers = {}
     if (token) {
         headers = {
-            'Authorization': 'Bearer' + token,
+            'Authorization': 'Bearer ' + token,
             'PB-Customer-Id': 'sa42ddf',
             'Content-type': 'application/json'}
     }
@@ -52,7 +52,7 @@ function makeRequest() {
             }
         }).then(responseText => logResponse("requestResponse", responseText))
         .catch(console.error)
-        }
+}
 
 
 //This section does something to get a token and save it in the browser session securely (I SHOULD USE THIS BUT IM TOO DUMB TO UNDERSTAND IT)
