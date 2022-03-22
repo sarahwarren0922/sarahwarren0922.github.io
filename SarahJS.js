@@ -111,6 +111,8 @@ function dataIdRequest() {
 }
 
 //Step 4 button function
+const dataSourceId = 'fb76389f-dea6-4f65-8d80-04cb54688df6'; 
+
 function recordIdRequest() {
     auth.fetch("https://api.us-east-1.communicate.engageone.co/data/" + dataSourceId, {headers: nonauthHeaders})
         .then((response) => {
