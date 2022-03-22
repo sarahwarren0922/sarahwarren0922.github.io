@@ -46,8 +46,8 @@ function login() {
         }
         })
         .then(data => {
+            token = data;
             auth.setToken(token)
-            //token = data;
             //localStorage.setItem("token", token);
             logResponse("loginResponse", 'Token generated successfully!')
         })
