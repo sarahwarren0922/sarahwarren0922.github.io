@@ -9,7 +9,26 @@ function logResponse(codeblock, text) {
     document.getElementById(codeblock).innerText = text;
 }
 
-var token; //global variable
+function authModule() {
+    const authOrigins = []
+    let token = '';
+
+    this.setToken = (value) => {
+        token = value
+    }
+
+    this.fetch = (resource, options) => {
+        let req = new Request(resource, options);
+        destOrigin = new URL(req.url).origin;
+        if (token && authOrigins.includes(destOrigin)) {
+            req.headers.set('Authorization', 'Bearer ' + token);
+        }
+        return fetch(req)
+    }
+}
+
+//var token; //global variable
+const auth = new authModule();
 
 function login() {
     fetch("https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate", {
@@ -27,7 +46,8 @@ function login() {
         }
         })
         .then(data => {
-            token = data;
+            auth.setToken(token)
+            //token = data;
             //localStorage.setItem("token", token);
             logResponse("loginResponse", 'Token generated successfully!')
         })
@@ -35,14 +55,14 @@ function login() {
 }
 
 function makeRequest() {
-    let headers = {}
+    //let headers = {}
     if (token) {
         headers = {
-            'Authorization': 'Bearer ' + token,
+            //'Authorization': 'Bearer ' + token,
             'PB-Customer-Id': 'sa42ddf',
             'Content-type': 'application/json'}
     }
-    fetch("https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: headers})
+    auth.fetch("https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: headers})
         .then((response) => {
             if (response.status == 200) {
                 return response.json()
