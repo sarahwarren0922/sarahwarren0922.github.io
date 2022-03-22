@@ -124,8 +124,14 @@ function recordIdRequest() {
         })
         .then((responseText) => {
             parsedResponse = JSON.stringify(responseText.data);
-            logResponse("recordIdResponse", parsedResponse);
+            //logResponse("recordIdResponse", parsedResponse);
             //logResponse("dataIdResponse", "Data Source Id: " + dataSourceId + " obtained successfully!")
+            uuidArray = [];
+            for(let i = 0; i < parsedResponse.length; i++) {
+                var uuids = parsedResponse[i].uuid;
+                uuidArray.push(uuids);
+            logResponse("recordIdResponse", uuidArray)
+}
         })
         .catch(console.error)
 }
