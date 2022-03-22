@@ -51,7 +51,7 @@ function makeRequest() {
             }
         })
         .then(responseText => {
-            parsedResponse = responseText.json();
+            parsedResponse = responseText.text();
             logResponse("requestResponse", parsedResponse.videoUrl)
         })
         .catch(console.error)
