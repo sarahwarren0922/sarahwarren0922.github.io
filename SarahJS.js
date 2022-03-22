@@ -53,6 +53,7 @@ function makeRequest() {
         .then((responseText) => {
             parsedResponse = JSON.stringify(responseText.videoUrl);
             logResponse("requestResponse", JSON.parse(parsedResponse))
+            genericUrl = JSON.parse(parsedResponse)
         })
         .catch(console.error)
 }
