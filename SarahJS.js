@@ -137,22 +137,26 @@ function recordIdRequest() {
 }
 
 //Seperate function notes to make urls clickable (hyperlinked)
-var a = document.createElement('a');
-var linkText = document.createTextNode("my title text");
+/*var a = document.createElement('a');
+var linkText = document.createTextNode("hello");
 a.appendChild(linkText);
-a.title = "my title text";
+//a.title = "yamma";
 a.href = "http://www.google.com";
 document.body.appendChild(a);
-logResponse('appendIdFinal', document.body.appendChild(a));
-
+//logResponse('appendIdFinal', document.body.appendChild(a));
+*/
 
 //Step 5 button function
 function appendIds() {
     purlsArray = [];
     for (let i = 0; i <uuidArray.length; i++) {
-        var purls = '<a href="www.google.com" >' + genericUrl + uuidArray[i] + '</a>';
+        var a = document.createElement('a');
+        var purls = document.createTextNode(genericUrl + uuidArray[i]);
+        a.appendChild(purls);
+        a.href = "http://www.google.com";
+        document.body.appendChild(a);
         purlsArray.push(purls);
-        //logResponse("appendIdFinal", purlsArray.join('\n'))
+        logResponse("appendIdFinal", purlsArray.join('\n'))
     }
     purlsArraywName = [];
     for (let i = 0; i < purlsArray.length; i++) {
