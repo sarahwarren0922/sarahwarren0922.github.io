@@ -140,7 +140,7 @@ function recordIdRequest() {
 function appendIds() {
     purlsArray = [];
     for (let i = 0; i <uuidArray.length; i++) {
-        var purls = genericUrl + uuidArray[i];
+        var purls = '<a href="www.google.com" >' + genericUrl + uuidArray[i] + '</a>';
         purlsArray.push(purls);
         //logResponse("appendIdFinal", purlsArray.join('\n'))
     }
