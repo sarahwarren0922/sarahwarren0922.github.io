@@ -26,7 +26,6 @@ function login() {
             throw Error(response.statusText)
         }
         })
-
         .then(data => {
             token = data;
             //localStorage.setItem("token", token);
@@ -50,7 +49,8 @@ function makeRequest() {
             } else {
                 throw Error(response.statusText)
             }
-        }).then(responseText => {
+        })
+        .then(responseText => {
             parsedResponse = responseText.json();
             logResponse("requestResponse", parsedResponse.videoUrl)
         })
