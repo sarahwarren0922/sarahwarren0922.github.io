@@ -55,14 +55,19 @@ function login() {
 }
 
 function makeRequest() {
-    //let headers = {}
+    /*let headers = {}
     if (token) {
         headers = {
             //'Authorization': 'Bearer ' + token,
             'PB-Customer-Id': 'sa42ddf',
             'Content-type': 'application/json'}
+    } */
+    nonauthHeaders = {
+        'PB-Customer-Id': 'sa42ddf',
+        'Content-type': 'application/json'
     }
-    auth.fetch("https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: headers})
+
+    auth.fetch("https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: nonauthHeaders})
         .then((response) => {
             if (response.status == 200) {
                 return response.json()
