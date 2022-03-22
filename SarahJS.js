@@ -110,6 +110,25 @@ function dataIdRequest() {
         .catch(console.error)
 }
 
+//Step 4 button function
+function recordIdRequest() {
+    auth.fetch("https://api.us-east-1.communicate.engageone.co/data/" + dataSourceId, {headers: nonauthHeaders})
+        .then((response) => {
+            if (response.status == 200) {
+                return response.json()
+            } else {
+                throw Error(response.statusText)
+            }
+        })
+        .then((responseText) => {
+            parsedResponse = JSON.stringify(responseText);
+            //logResponse("dataIdResponse", parsedResponse);
+            //const dataSourceId = 'fb76389f-dea6-4f65-8d80-04cb54688df6';
+            //logResponse("dataIdResponse", "Data Source Id: " + dataSourceId + " obtained successfully!")
+        })
+        .catch(console.error)
+}
+
 //Start of Functions for the buttons actions
 function getToken() {
     document.getElementById("generatetoken").innerHTML = "Token generated successfully!";
