@@ -50,9 +50,9 @@ function makeRequest() {
                 throw Error(response.statusText)
             }
         })
-        .then(responseText => {
+        .then((responseText) => {
             parsedResponse = responseText.text();
-            logResponse("requestResponse", parsedResponse.videoUrl)
+            logResponse("requestResponse", responseText)
         })
         .catch(console.error)
 }
