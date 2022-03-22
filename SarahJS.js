@@ -131,7 +131,7 @@ function recordIdRequest() {
             for(let i = 0; i < gotoResponse.length; i++) {
                 var uuids = gotoResponse[i].uuid;
                 uuidArray.push(uuids);
-            logResponse("recordIdResponse", uuidArray)
+            logResponse("recordIdResponse", uuidArray[i])
 }
         })
         .catch(console.error)
