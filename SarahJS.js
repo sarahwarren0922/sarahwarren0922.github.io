@@ -57,7 +57,7 @@ function login() {
 const nonauthHeaders = {
     'PB-Customer-Id': 'sa42ddf',
     'Content-type': 'application/json'
-}
+};
 
 function makeRequest() {
     /*let headers = {}
