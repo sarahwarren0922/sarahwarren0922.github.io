@@ -100,8 +100,8 @@ function dataIdRequest() {
             }
         })
         .then((responseText) => {
-            //parsedResponse = JSON.stringify(responseText.videoUrl);
-            logResponse("dataIdResponse", responseText)
+            parsedResponse = JSON.stringify(responseText);
+            logResponse("dataIdResponse", parsedResponse)
         })
         .catch(console.error)
 }
