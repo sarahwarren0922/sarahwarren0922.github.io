@@ -10,7 +10,8 @@ function logResponse(codeblock, text) {
 }
 
 function authModule() {
-    const authOrigins = ['https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate', 'https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl']
+    const fetch = window.fetch; // added statement for XSS overwrite
+    const authOrigins = ['https://limitless-sea-04039.herokuapp.com/https://usersapi.communicate.engageone.co/authenticate', 'https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl'];
     let token = '';
 
     this.setToken = (value) => {
