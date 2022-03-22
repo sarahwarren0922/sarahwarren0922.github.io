@@ -23,6 +23,8 @@ function authModule() {
         destOrigin = new URL(req.url).origin;
         if (token && authOrigins.includes(destOrigin)) {
             req.headers.set('Authorization', 'Bearer ' + token);
+        } else {
+            console.log("oh no")
         }
         return fetch(req)
     }
