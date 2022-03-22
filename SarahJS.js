@@ -45,14 +45,15 @@ function makeRequest() {
     fetch("https://limitless-sea-04039.herokuapp.com/https://api-ui.engageone.video/data/projects/Sarah/communications/VideoEx/videoUrl", {headers: headers})
         .then((response) => {
             if (response.status == 200) {
-                return response.text()
+                return response.json()
             } else {
                 throw Error(response.statusText)
             }
         })
         .then((responseText) => {
-            parsedResponse = responseText.text();
-            logResponse("requestResponse", responseText)
+            parsedResponse = responseText;
+            logResponse("requestResponse", parsedResponse)
+
         })
         .catch(console.error)
 }
