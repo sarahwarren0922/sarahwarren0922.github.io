@@ -51,13 +51,11 @@ function makeRequest() {
             }
         })
         .then((responseText) => {
-            parsedResponse = responseText;
+            parsedResponse = JSON.stringify(responseText);
             logResponse("requestResponse", parsedResponse)
-
         })
         .catch(console.error)
 }
-
 
 //This section does something to get a token and save it in the browser session securely (I SHOULD USE THIS BUT IM TOO DUMB TO UNDERSTAND IT)
 /*function authModule() {
