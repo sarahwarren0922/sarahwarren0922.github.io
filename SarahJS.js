@@ -123,9 +123,8 @@ function recordIdRequest() {
             }
         })
         .then((responseText) => {
-            parsedResponse = JSON.stringify(responseText);
+            parsedResponse = JSON.stringify(responseText.data);
             logResponse("recordIdResponse", parsedResponse);
-            //const dataSourceId = 'fb76389f-dea6-4f65-8d80-04cb54688df6';
             //logResponse("dataIdResponse", "Data Source Id: " + dataSourceId + " obtained successfully!")
         })
         .catch(console.error)
