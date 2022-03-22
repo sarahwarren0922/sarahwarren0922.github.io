@@ -50,7 +50,10 @@ function makeRequest() {
             } else {
                 throw Error(response.statusText)
             }
-        }).then(responseText => logResponse("requestResponse", responseText.videoUrl))
+        }).then(responseText => {
+            parsedResponse = responseText.json();
+            logResponse("requestResponse", parsedResponse.videoUrl)
+        })
         .catch(console.error)
 }
 
