@@ -90,6 +90,8 @@ function makeRequest() {
 }
 
 //Step 3 button function
+//Note that this function works upon button click and will allow you to see the data sources and associated Id's in the selected environment, 
+//but for ease purposes is hard coded from this point forward as "Id":"fb76389f-dea6-4f65-8d80-04cb54688df6"
 function dataIdRequest() {
     auth.fetch("https://limitless-sea-04039.herokuapp.com/https://api.us-east-1.communicate.engageone.co/data", {headers: nonauthHeaders})
         .then((response) => {
@@ -101,7 +103,9 @@ function dataIdRequest() {
         })
         .then((responseText) => {
             parsedResponse = JSON.stringify(responseText);
-            logResponse("dataIdResponse", parsedResponse)
+            //logResponse("dataIdResponse", parsedResponse);
+            const dataSourceId = 'fb76389f-dea6-4f65-8d80-04cb54688df6';
+            logResponse("dataIdResponse", "Data Source Id: " + dataSourceId + " obtained successfully!")
         })
         .catch(console.error)
 }
