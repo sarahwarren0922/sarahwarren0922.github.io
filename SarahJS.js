@@ -150,19 +150,20 @@ document.body.appendChild(a);
 function appendIds() {
     purlsArray = [];
     for (let i = 0; i < uuidArray.length; i++) {
-        var a = document.createElement('a');
-        var purls = document.createTextNode(genericUrl + uuidArray[i]);
-        a.appendChild(purls[i]);
-        a.href = "http://www.google.com";
-        document.body.appendChild(a);
+        //var a = document.createElement('a');
+        //var purls = document.createTextNode(genericUrl + uuidArray[i]);
+        purls = genericUrl + uuidArray[i];
+        //a.appendChild(purls);
+        //a.href = "http://www.google.com";
+        //document.body.appendChild(a);
         purlsArray.push(purls);
-        //logResponse("appendIdFinal", purlsArray.join('\n'))
+        logResponse("appendIdFinal", purlsArray.join('\n'))
     }
     purlsArraywName = [];
     for (let i = 0; i < purlsArray.length; i++) {
         var wname = gotoResponse[i].NAME + " - " + purlsArray[i];
         purlsArraywName.push(wname);
-        //logResponse("appendIdFinal", purlsArraywName.join('\n'))
+        logResponse("appendIdFinal", purlsArraywName.join('\n'))
     }
 }
 
