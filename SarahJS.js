@@ -154,7 +154,7 @@ function appendIds() {
         var purls = document.createTextNode(genericUrl + uuidArray[i]);
         a.appendChild(purls);
         a.href = "http://www.google.com";
-        document.body.appendChild(a).join('\n');
+        document.body.appendChild(a[i]);
         purlsArray.push(purls);
         //logResponse("appendIdFinal", purlsArray.join('\n'))
     }
