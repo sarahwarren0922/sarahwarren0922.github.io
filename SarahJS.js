@@ -149,12 +149,12 @@ document.body.appendChild(a);
 //Step 5 button function
 function appendIds() {
     purlsArray = [];
-    for (let i = 0; i <uuidArray.length; i++) {
+    for (let i = 0; i < uuidArray.length; i++) {
         var a = document.createElement('a');
         var purls = document.createTextNode(genericUrl + uuidArray[i]);
-        a.appendChild(purls);
+        a.appendChild(purls[i]);
         a.href = "http://www.google.com";
-        document.body.appendChild(a[i]);
+        document.body.appendChild(a);
         purlsArray.push(purls);
         //logResponse("appendIdFinal", purlsArray.join('\n'))
     }
